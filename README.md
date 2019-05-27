@@ -34,6 +34,8 @@
 
 2. 页面CSS格式
 
+
+
    ```css
    body{
        margin:0;
@@ -98,9 +100,15 @@
    ```
 
 
+
 二、搜索框点击边框圆角过渡变换（纯CSS实现）
 
-1、页面构成
+[点击查看在线效果](http://www.statssun.com/SearchBox2/)
+
+1. 页面构成
+   - 标题(可有可无)
+   - 表单：输入框和提交按钮
+
 
 ```html
 <!DOCTYPE html>
@@ -114,6 +122,7 @@
     <div class="box">
         <h1>Search</h1>
         <form >
+            <!--插入表单-->
             <input type="text" name="" placeholder="Type to Search">
             <input type="submit" name="" value="Search">
         </form>
@@ -122,7 +131,7 @@
 </html>
 ```
 
-2、页面CSS格式
+2. 页面CSS格式
 
 ```css
 body{
@@ -146,11 +155,14 @@ h1{
 
 input{
     position: relative;
+    /*设置行内块元素，效果同float，IE6、IE7不支持*/
     display: inline-block;
     font-size: 20px;
     height: 50px;
+    /*定义总宽度和总高度的计算方式，这里总宽高=content+padding+border*/
     box-sizing:border-box;
-    transition:  .5s;
+    /*单独设置边框弧度变化效果*/
+    transition: border-radius .5s;
 }
 input[type="text"]{
     background: #ffffff;
@@ -167,7 +179,6 @@ input[type="submit"]{
     border-radius:0 25px 25px 0;
     border: none;
     outline: none;
-    padding: 0;
     cursor: pointer;
     background: #ffc107;
     color: #ffffff;
@@ -175,6 +186,7 @@ input[type="submit"]{
 input[type="submit"]:hover{
     background: #ff5722;
 }
+/*选择优化项：输入框和提交按钮设置为响应式布局，避免出现错位情况*/
 ```
 
 
