@@ -191,11 +191,109 @@ input[type="submit"]:hover{
 
 
 
+三、在导航菜单栏添加搜索框（纯CSS实现）
+
+[点击查看在线效果](http://www.statssun.com/SearchBox3/)
+
+1. 页面构成
+   - 导航菜单
+   - 搜索框
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带导航连接带搜索框</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <!--插入导航连接菜单-->
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Event</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <!--插入搜索框和搜索按钮-->
+        <form>
+            <input type="text" name="" placeholder="Type....">
+            <input type="submit" name="" value="Search">
+        </form>
+    </nav>
+</body>
+</html>
+```
 
 
 
+2. 页面CSS格式
 
-
-
-
+```css
+body{
+    padding: 0;
+    margin: 0;
+    background: skyblue;
+    font-family: sans-serif;
+}
+/*定义导航连接部分*/
+nav{
+    width: 100%;
+    background: #112038;
+    overflow: auto;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    line-height: 60px;
+}
+ul li{
+    float: left;
+}
+ul li a{
+    background: #112038;
+    text-decoration: none;
+    width: 130px;
+    display:inline-block;
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+/*通过透明度和字体大小变化设置动态效果*/
+li a:hover{
+    color: #ffffff;
+    opacity: 0.5;
+    font-size: 19px;
+}
+form{
+    margin-top: 15px;
+    float: right;
+    margin-right: 100px;
+}
+input[type="text"]{
+    padding: 7px;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px 0 0 5px;
+}
+input[type="submit"]{
+    float: right;
+    background: orange;
+    color: white;
+    border-radius:0 5px 5px 0;
+    cursor: pointer;
+    position: relative;
+    padding: 7px;
+    border: none;
+    font-size: 16px;
+}
+input[type="submit"]:hover{
+    background: red;
+}
+/*选择优化项：导航菜单和搜索框设置为响应式布局，避免出现页面窗口过小时出现错位情况*/
+```
 
