@@ -297,3 +297,127 @@ input[type="submit"]:hover{
 /*选择优化项：导航菜单和搜索框设置为响应式布局，避免出现页面窗口过小时出现错位情况*/
 ```
 
+
+
+### 登陆表单系列
+
+一、万圣节主题登录界面
+
+[点击查看在线效果](http://www.statssun.com/LoginForm3/)
+
+1. 页面结构
+   - 图标
+   - form表单
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginForm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-box">
+        <img src="../../images/018.png" alt="">
+        <h1>Login Here</h1>
+        <form>
+            <p>Username</p>
+            <input type="text" name="" placeholder="Enter Your Name">
+            <p>Password</p>
+            <input type="password" name="" placeholder="Enter Password"><br>
+            <input type="submit" name="" value="Login"><br>
+            <a href="#">Lost your password?</a><br>
+            <a href="#">Don't here an account?</a>
+        </form>
+    </div>
+</body>
+</html>
+```
+
+
+
+2. CSS样式
+
+
+```css
+body{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    background: url("../../images/029.jpg") no-repeat scroll;
+    background-size:cover;
+}
+.login-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%,-50%);
+    width: 240px;
+    height: 340px;
+    background: rgba(0,0,0,0.5);
+    border-radius:10px;
+}
+img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position:relative;
+    left: 90px;
+    top: -30px;
+}
+h1{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    top: -15px;
+    font-size: 24px;
+    color: #ffffff;
+}
+form{
+    margin:0 25px;
+    color: #ffffff;
+}
+p{
+    margin: 0;
+    font-size: 16px;
+}
+input[type="text"],input[type="password"]{
+    background: transparent;
+    border:none;
+    border-bottom: 1px solid #ffffff;
+    padding: 5px 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    color: #ffffff;
+}
+input[type="submit"]{
+    width: 100%;
+    height: 30px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    border-radius:20px;
+    background: darkorange;
+    color: #ffffff;
+}
+a{
+    font-size: 12px;
+    color: #ffffff;
+    text-decoration: none;
+}
+input[type="submit"]:hover{
+    cursor: pointer;
+    background: orange;
+}
+a:hover,h1:hover{
+    color: orange;
+}
+input[type="text"]:hover,input[type="password"]:hover{
+    border-bottom:1.5px solid darkorange;
+}
+```
+
