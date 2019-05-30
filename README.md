@@ -421,3 +421,180 @@ input[type="text"]:hover,input[type="password"]:hover{
 }
 ```
 
+
+
+四、并列双登陆界面
+
+[点击查看在线效果](http://www.statssun.com/LoginForm4/)
+
+1. 页面布局
+
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginForm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-box">
+        <div class="left-box">
+            <h1>Sign Up</h1>
+            <input type="text" name="" placeholder="Username">
+            <input type="text" name="" placeholder="Email">
+            <input type="password" name="" placeholder="Password">
+            <input type="password" name="" placeholder="Retype password">
+            <input type="submit" name="" value="Sign Up">
+        </div>
+        <div class="right-box">
+            <span class="sign-with">Sign in with<br/>Social Network</span>
+            <button class="social facebook">Log in with Facebook</button>
+            <button class="social twitter">Log in with Twitter</button>
+            <button class="social google">Log in with Google</button>
+        </div>
+        <div class="or">OR</div>
+    </div>
+</body>
+</html>
+```
+
+
+
+2. CSS格式
+
+
+```css
+body{
+    margin: 0;
+    padding: 0;
+    background: #efefef;
+    font-size: 16px;
+    color: #777;
+    font-family: sans-serif;
+    font-weight: 300;
+}
+/*整体布局格式*/
+.login-box{
+    position: relative;
+    margin: 10% auto;
+    width: 600px;
+    height: 400px;
+    background: #ffffff;
+    box-shadow:0 2px 4px rgba(0,0,0,0.6);
+}
+
+/*左布局格式*/
+.left-box{
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing:border-box;
+    padding:40px;
+    width: 300px;
+    height: 400px;
+}
+h1{
+    margin: 0 0 20px 0;
+    font-weight: 400;
+    font-size: 28px;
+}
+input[type="text"],input[type="password"]{
+    display: block;
+    box-sizing:border-box;
+    margin-bottom: 20px;
+    padding: 4px;
+    width: 220px;
+    height: 32px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #aaa;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+input[type="submit"]{
+    margin-bottom: 28px;
+    width: 120px;
+    height: 32px;
+    border: none;
+    outline: none;
+    background: #f44336;
+    border-radius:2px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+input[type="text"]:hover,input[type="password"]:hover{
+    border-bottom: 1.3px solid darkolivegreen;
+}
+input[type="submit"]:hover{
+    transition:0.2s ease;
+    background: crimson;
+}
+
+/*右布局格式*/
+.right-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing:border-box;
+    padding: 40px;
+    width: 300px;
+    height: 400px;
+    background-image: url("../../images/008.jpg");
+    background-size:cover;
+}
+.right-box .sign-with{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+button.social{
+    margin-bottom: 20px;
+    width: 220px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    transition:0.2s ease;
+    cursor: pointer;
+}
+.facebook{
+    background: #32508e;
+}
+.twitter{
+    background: #55acee;
+}
+.google{
+    background: #dd4b39;
+}
+.or{
+    position: absolute;
+    top: 180px;
+    left: 280px;
+    width: 40px;
+    height: 40px;
+    background: #efefef;
+    opacity: 0.9;
+    border-radius:50%;
+    box-shadow:0 2px 4px rgba(0,0,0,0.6);
+    line-height: 40px;
+    text-align: center;
+}
+button.social:hover{
+    transition:0.2s ease;
+    opacity: 0.8;
+}
+```
+
