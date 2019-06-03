@@ -604,6 +604,8 @@ button.social:hover{
 
 五、JS贷款计算器
 
+1. 页面布局
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -674,5 +676,50 @@ button.social:hover{
     </table>
 </body>
 </html>
+```
+
+
+
+2. JS代码
+
+
+```javascript
+function calculate() {
+    var amount = document.getElementById("amount"),
+        apr = document.getElementById("apr"),
+        years = document.getElementById("years"),
+        zipcode = document.getElementById("zipcode"),
+        payment = document.getElementById("payment"),
+        total = document.getElementById("total"),
+        totalinterest = document.getElementById("totalinterest");
+
+    var principal = parseFloat(amount.value);
+    var interest = parseFloat(apr.value)/100/12;
+    var payments = parseFloat(years.value)*12;
+
+    var x = Math.pow(1 + interest,payment);
+    var monthly = (principal * x * interest)/(x-1);
+
+    if(isFinite(monthly)){
+        payment.innerHTML = monthly.toFixed(2);
+        total.innerHTML = (monthly * payment).toFixed(2);
+        totalinterest.innerHTML = ((monthly*payments)-principal).toFixed(2);
+
+        save(amount.value,apr.value,years.value,zipcode.value);
+
+        try {
+            getlenders(amount.value,apr.value,years.value,zipcode.value);
+        }
+        catch(e){}
+            chart(principal,interest,monthly,payments);
+    }
+
+    else{
+            payment.innerHTML = "";
+            total.innerHTML = "";
+            totalinterest.innerHTML = "";
+            chart();
+        }
+}
 ```
 
