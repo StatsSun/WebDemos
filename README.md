@@ -721,5 +721,50 @@ function calculate() {
             chart();
         }
 }
+
+function save(amount,apr,years,zipcode) {
+    if(window.localStorage){
+        localStorage.loan_amount = amount;
+        localStorage.loan_apr = apr;
+        localStorage.loan_years = years;
+        localStorage.loan_zipcode = zipcode;
+    }
+}
+
+window.onload = function () {
+    if(window.localStorage && localStorage.loan_amount){
+        document.getElementById("amount").value = localStorage.loan_amount;
+        document.getElementById("apr").value = localStorage.loan_apr;
+        document.getElementById("years").value = localStorage.loan_years;
+        document.getElementById("zipcode").value = localStorage.loan_zipcode;
+    }
+};
+
+function getlenders(amount,apr,years,zipcode) {
+    if(!window.XMLHttpRequest) return;
+    var ad = document.getElementById("lenders");
+    if(!ad) return;
+    var url = "getlenders.php" +
+        "?amt=" + encodeURIComponent(amount) +
+        "?apr=" + encodeURIComponent(apr) +
+        "?yrs=" + encodeURIComponent(years) +
+        "?zip=" + encodeURIComponent(zipcode);
+
+    var req = new XMLHttpRequest();
+    req.open("GET",url);
+    req.send(null);
+    req.onreadystatechange = function () {
+        if(req.readyState === 4 && req.status === 200){
+            var response = req.responseText;
+            var lenders = JSON.parse(response);
+            var list = "";
+            for(var i = 0;i<lenders.length;i++){
+                list +="<li><a href = '"+lenders[i].url+"'>" +
+                    lenders[i].name + "</a>>";
+            }
+            ad.innerHTML = "<ul>" + list + "</ul>";
+        }
+    }
+}
 ```
 
