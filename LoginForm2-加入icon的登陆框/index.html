@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LoginForm2</title>
+    <style>
+        @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background: url(../../images/010.jpg) no-repeat;
+            background-size:cover;
+        }
+
+        .box{
+            width: 280px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform:translate(-50%,-50%);
+            color: white;
+        }
+        .box h1{
+            float: left;
+            font-size: 40px;
+            border-bottom: 5px solid #376d3c;
+            margin-bottom:50px;
+            padding: 13px 0;
+        }
+        .textbox{
+            width: 100%;
+            overflow: hidden;
+            font-size: 20px;
+            padding: 8px 0;
+            margin: 8px 0;
+            border-bottom: 1px solid #376d3c;
+
+
+        }
+        .textbox i{
+            width: 26px;
+            float: left;
+            text-align: center;
+        }
+        .textbox input{
+            border: none;
+            outline: none;
+            background: none;
+            color: #f2f2f2;
+            font-size: 18px;
+            width: 80%;
+            float: left;
+            margin: 0 10px;
+            transition: 0.25s;
+
+        }
+        .textbox:hover{
+            border-bottom: 2px solid #376d3c;
+        }
+        .btn{
+            width: 100%;
+            background: none;
+            border: 2px solid #376d3c;
+            color: white;
+            padding: 5px;
+            background: #376d3c;
+        }
+        .btn:hover{
+            background: #127d0a;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>LOGIN</h1>
+
+        <div class="textbox">
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <input type="text" placeholder="Username" name="" value="">
+        </div>
+        <div class="textbox">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            <input type="password" placeholder="Password" name="" value="">
+        </div>
+
+        <input class="btn" type="button" name="" value="Login in">
+    </div>
+</body>
+</html>
