@@ -768,3 +768,6 @@ function getlenders(amount,apr,years,zipcode) {
 }
 ```
 
+
+
+3. js知识点
